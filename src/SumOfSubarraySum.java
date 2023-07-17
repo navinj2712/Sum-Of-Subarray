@@ -15,14 +15,25 @@ public class SumOfSubarraySum {
     }
 
     private static int findSumOfSubarraySum(int[] array) {
-        int totalSum = 0, subarraySum;
-        for (int i = 0; i < array.length; i++){
-            subarraySum = 0;
-            for (int j = i ; j < array.length; j++){
-                subarraySum += array[j];
-                totalSum += subarraySum;
-            }
+        int sum = 0;
+        int size = array.length;
+        for(int i = 0; i < size; i++){
+            sum += (i + 1) * (size - i) * array[i];
         }
-        return totalSum;
+        return  sum;
     }
+//
+//    private static int findSumOfSubarraySum(int[] array) {
+//        int totalSum = 0, subarraySum;
+//        for (int i = 0; i < array.length; i++){
+//            subarraySum = 0;
+//            for (int j = i ; j < array.length; j++){
+//                subarraySum += array[j];
+//                totalSum += subarraySum;
+//            }
+//        }
+//        return totalSum;
+//    }
+
+
 }
